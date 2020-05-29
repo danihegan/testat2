@@ -15,7 +15,7 @@ int main() {
 	const double grenze3 = 30000.0; 
 	
 		
-	double kinderAnzahl = kinder * 0.1;
+	double kinderSteuer = kinder * 0.1;
 	float steuer;
 	double eheSteuer;
 	
@@ -28,19 +28,19 @@ int main() {
 	
 	// Berechnung 
 		if (bruttogehalt <= grenze1) {
-		steuer = bruttogehalt * steuersatz1 * (1.0 - (eheSteuer + kinderAnzahl)); 
+		steuer = bruttogehalt * steuersatz1 * (1.0 - (eheSteuer + kinderSteuer)); 
 		}
         else if (bruttogehalt <= grenze2) {
-		steuer = bruttogehalt * steuersatz2 * (1.0 - (eheSteuer + kinderAnzahl));
+		steuer = bruttogehalt * steuersatz2 * (1.0 - (eheSteuer + kinderSteuer));
 	    }
 		else if (bruttogehalt <= grenze3) {
-		steuer = bruttogehalt * steuersatz3 * (1.0 - (eheSteuer + kinderAnzahl)); 
+		steuer = bruttogehalt * steuersatz3 * (1.0 - (eheSteuer + kinderSteuer)); 
 		}
 		else {
-		steuer = bruttogehalt * steuersatz4 * (1.0 - (eheSteuer + kinderAnzahl)); 
+		steuer = bruttogehalt * steuersatz4 * (1.0 - (eheSteuer + kinderSteuer)); 
 		}
 	// Ausgabe 
-		if (bruttogehalt < 0.0 || verheiratet < 0 || verheiratet > 1) {
+		if (bruttogehalt < 0.0 || verheiratet < 0 || verheiratet > 1 || (kinder < 1 && kinder != 0)) {
 	    	printf("Eingabefehler\n");
 		}
 		else if (steuer < 0.0) {
